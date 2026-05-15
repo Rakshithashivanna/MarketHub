@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="products">
+
+    <h2>My Orders</h2>
+
+    <div class="product-grid">
+
+        {% for order in orders %}
+
+        <div class="product-card">
+
+            <div class="product-info">
+
+                <h3>
+                    Order #{{ order.id }}
+                </h3>
+
+                <p>
+                    Address : {{ order.address }}
+                </p>
+
+                <p>
+                    Phone : {{ order.phone }}
+                </p>
+
+                <p>
+                    Payment : {{ order.payment_method }}
+                </p>
+
+                <div class="price">
+                    ₹{{ order.total_price }}
+                </div>
+
+                <br>
+
+                <p>
+                    Status :
+                    <strong>
+                        {{ order.status }}
+                    </strong>
+                </p>
+
+                <br>
+
+                <!-- CANCEL ORDER -->
+
+                {% if order.status in ['Pending', 'Approved'] %}
+
+                <a href="/cancel-order/{{ order.id }}">
+
+                    <button class="btn">
+                        Cancel Order
+                    </button>
+
+                </a>
+
+                {% endif %}
+
+
+                <!-- REVIEW -->
+
+                {% if order.status == 'Delivered' %}
+
+                <br><br>
+
+                <a href="/review/{{ order.id }}">
+
+                    <button class="btn">
+                        Rate & Review
+                    </button>
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

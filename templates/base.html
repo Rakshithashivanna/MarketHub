@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>MarketHub</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <h2>MarketHub</h2>
+
+        </div>
+
+
+
+        <form class="search-box"
+method="GET"
+action="/search">
+
+    <input type="text"
+    name="query"
+    placeholder="Search products...">
+
+    <button>
+
+        <i class="fa fa-search"></i>
+
+    </button>
+
+</form>
+
+
+
+        <!-- NAV LINKS -->
+
+        <ul class="nav-links">
+
+            <!-- HOME -->
+
+            <li>
+
+                <a href="/">
+
+                    Home
+
+                </a>
+
+            </li>
+
+
+
+            <!-- CART -->
+
+            <li>
+
+                <a href="/cart">
+
+                    <i class="fa fa-shopping-cart"></i>
+
+                    Cart
+
+                </a>
+
+            </li>
+
+
+
+            {% if session.get('username') %}
+
+
+            <!-- USERNAME -->
+
+            <li>
+
+                <a href="#">
+
+                    {{ session['username'] }}
+
+                </a>
+
+            </li>
+
+
+
+            <!-- ADMIN -->
+
+            {% if session.get('role') == 'admin' %}
+
+            <li>
+
+                <a href="/admin">
+
+                    Admin
+
+                </a>
+
+            </li>
+
+            {% endif %}
+
+
+
+            <!-- STAFF -->
+
+            {% if session.get('role') == 'staff' %}
+
+            <li>
+
+                <a href="/staff">
+
+                    Staff
+
+                </a>
+
+            </li>
+
+            {% endif %}
+
+
+
+            <!-- ORDERS -->
+
+            <li>
+
+                <a href="/my-orders">
+
+                    Orders
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/profile">
+
+                    Profile
+
+                </a>
+
+            </li>
+
+
+
+            <!-- LOGOUT -->
+
+            <li>
+
+                <a href="/logout">
+
+                    Logout
+
+                </a>
+
+            </li>
+
+
+            {% else %}
+
+
+
+            <!-- LOGIN -->
+
+            <li>
+
+                <a href="/login">
+
+                    Login
+
+                </a>
+
+            </li>
+
+
+
+            <!-- REGISTER -->
+
+            <li>
+
+                <a href="/register">
+
+                    Register
+
+                </a>
+
+            </li>
+
+
+            {% endif %}
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <div class="container">
+
+        {% block content %}
+
+        {% endblock %}
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+
+            © 2026 MarketHub | All Rights Reserved
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- JS -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

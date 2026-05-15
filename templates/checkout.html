@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="login-container">
+
+    <form class="login-form"
+    method="POST">
+
+        <h2>Checkout</h2>
+
+
+        <!-- ADDRESS -->
+
+        <textarea
+        name="address"
+        placeholder="Enter Delivery Address"
+        required
+        style="width:100%;
+        height:120px;
+        padding:15px;
+        border:none;
+        border-radius:10px;
+        margin-bottom:20px;"></textarea>
+
+
+        <!-- PHONE -->
+
+        <input type="text"
+        name="phone"
+        placeholder="Enter Phone Number"
+        required>
+
+
+        <!-- PAYMENT METHOD -->
+
+        <select name="payment_method"
+        required>
+
+            <option value="">
+                Select Payment Method
+            </option>
+
+            <option value="COD">
+                Cash On Delivery
+            </option>
+
+            <option value="UPI">
+                UPI
+            </option>
+
+            <option value="CARD">
+                Credit / Debit Card
+            </option>
+
+        </select>
+
+
+        <br><br>
+
+
+        <!-- TOTAL -->
+
+        <h3>
+            Total : ₹{{ total }}
+        </h3>
+
+        <br>
+
+
+        <!-- BUTTON -->
+
+        <button class="btn">
+
+            Place Order
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

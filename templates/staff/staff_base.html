@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Staff Dashboard</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='css/admin.css') }}">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    <h2>MarketHub</h2>
+
+    <ul>
+
+        <!-- DASHBOARD -->
+
+        <li>
+
+            <a href="/staff">
+
+                <i class="fa fa-home"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+
+
+        <!-- ADD PRODUCT -->
+
+        <li>
+
+            <a href="/add-product">
+
+                <i class="fa fa-plus"></i>
+
+                Add Product
+
+            </a>
+
+        </li>
+
+
+
+        <!-- ORDERS -->
+
+        <li>
+
+            <a href="/staff-orders">
+
+                <i class="fa fa-box"></i>
+
+                Orders
+
+            </a>
+
+        </li>
+
+
+
+        <!-- LOGOUT -->
+
+        <li>
+
+            <a href="/logout">
+
+                <i class="fa fa-sign-out-alt"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</div>
+
+
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+
+</body>
+
+</html>

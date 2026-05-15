@@ -1,0 +1,82 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block content %}
+
+<h1>Manage Products</h1>
+
+<br><br>
+
+<table class="admin-table">
+
+    <tr>
+
+        <th>ID</th>
+
+        <th>Image</th>
+
+        <th>Name</th>
+
+        <th>Price</th>
+
+        <th>Category</th>
+
+        <th>Action</th>
+
+        <th>Edit</th>
+
+    </tr>
+
+    {% for product in products %}
+
+    <tr>
+
+        <td>{{ product.id }}</td>
+
+        <td>
+
+            <img src="{{ product.image }}"
+            width="70">
+
+        </td>
+
+        <td>{{ product.name }}</td>
+
+        <td>₹{{ product.price }}</td>
+
+        <td>{{ product.category }}</td>
+
+        <td>
+
+            <a href="/edit-product/{{ product.id }}">
+
+                <button class="btn">
+
+                    Edit
+
+                </button>
+
+            </a>
+
+        </td>
+
+        <td>
+
+            <a href="/delete-product/{{ product.id }}">
+
+                <button class="btn">
+
+                    Delete
+
+                </button>
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

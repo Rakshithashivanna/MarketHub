@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="products">
+
+    <h2>Your Cart</h2>
+
+    <div class="product-grid">
+
+        {% for item in cart_items %}
+
+        <div class="product-card">
+
+            <img src="{{ item.product.image }}"
+            alt="">
+
+            <div class="product-info">
+
+                <h3>
+                    {{ item.product.name }}
+                </h3>
+
+                <p>
+                    Quantity : {{ item.quantity }}
+                </p>
+
+                <div class="price">
+
+                    ₹{{ item.product.price }}
+
+                </div>
+
+                <br>
+
+                <a href="/remove-from-cart/{{ item.id }}">
+
+                    <button class="btn">
+
+                        Remove
+
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+
+    <!-- CHECKOUT BUTTON -->
+
+    <br><br>
+
+    <a href="/checkout">
+
+        <button class="btn">
+
+            Proceed To Checkout
+
+        </button>
+
+    </a>
+
+</section>
+
+{% endblock %}

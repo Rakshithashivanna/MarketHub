@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="products">
+
+    <h2>
+        {{ subcategory_name }}
+    </h2>
+
+    <div class="product-grid">
+
+        {% for product in products %}
+
+        <div class="product-card">
+
+
+            <!-- PRODUCT IMAGE -->
+
+            <a href="/product/{{ product.id }}">
+
+                <img src="{{ product.image }}"
+                alt="">
+
+            </a>
+
+
+
+            <div class="product-info">
+
+
+                <!-- PRODUCT NAME -->
+
+                <h3>
+
+                    <a href="/product/{{ product.id }}"
+                    style="color:white;
+                    text-decoration:none;">
+
+                        {{ product.name }}
+
+                    </a>
+
+                </h3>
+
+
+
+                <!-- DESCRIPTION -->
+
+                <p>
+                    {{ product.description }}
+                </p>
+
+
+
+                <!-- PRICE -->
+
+                <div class="price">
+                    ₹{{ product.price }}
+                </div>
+
+                <br>
+
+
+
+                <!-- ADD TO CART -->
+
+                <a href="/add-to-cart/{{ product.id }}">
+
+                    <button class="btn">
+                        Add To Cart
+                    </button>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

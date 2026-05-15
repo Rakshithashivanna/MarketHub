@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="login-container">
+
+
+    <!-- FLASH MESSAGES -->
+
+    {% with messages = get_flashed_messages() %}
+
+        {% if messages %}
+
+            {% for message in messages %}
+
+                <div class="flash-message">
+
+                    {{ message }}
+
+                </div>
+
+            {% endfor %}
+
+        {% endif %}
+
+    {% endwith %}
+
+
+    <form class="login-form"
+    method="POST"
+    action="/register">
+
+        <h2>Create Account</h2>
+
+
+        <!-- USERNAME -->
+
+        <input type="text"
+        name="username"
+        placeholder="Enter Username"
+        required>
+
+
+        <!-- EMAIL -->
+
+        <input type="email"
+        name="email"
+        placeholder="Enter Email"
+        required>
+
+
+        <!-- PASSWORD -->
+
+        <input type="password"
+        name="password"
+        placeholder="Enter Password"
+        required>
+
+
+        <!-- CONFIRM PASSWORD -->
+
+        <input type="password"
+        name="confirm_password"
+        placeholder="Confirm Password"
+        required>
+
+
+        <!-- BUTTON -->
+
+        <button class="btn">
+
+            Register
+
+        </button>
+
+        <br><br>
+
+
+        <!-- LOGIN LINK -->
+
+        <p style="text-align:center;">
+
+            Already have an account?
+
+            <a href="/login"
+            style="color:#38bdf8;">
+
+                Login
+
+            </a>
+
+        </p>
+
+    </form>
+
+</div>
+
+{% endblock %}

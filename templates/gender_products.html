@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="products">
+
+    <h2>{{ category_name }}</h2>
+
+    <div class="category-grid">
+
+        {% for subcategory in subcategories %}
+
+        <a href="/subcategory/{{ category_name }}/{{ gender }}/{{ subcategory }}"
+           style="text-decoration:none; color:white;">
+
+            <div class="category-card">
+
+                <h3>{{ subcategory }}</h3>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

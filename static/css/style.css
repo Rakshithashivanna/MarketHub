@@ -1,0 +1,503 @@
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* BODY */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+    width: 100%;
+    padding: 18px 8%;
+    background: #111827;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo h2{
+    color: #38bdf8;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+/* SEARCH BOX */
+
+.search-box{
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+
+.search-box input{
+    width: 100%;
+    padding: 12px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 8px 0 0 8px;
+
+    font-size: 15px;
+}
+
+
+.search-box button{
+    padding: 12px 18px;
+
+    border: none;
+    cursor: pointer;
+
+    background: #38bdf8;
+    color: white;
+
+    border-radius: 0 8px 8px 0;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+
+.search-box button:hover{
+    background: #0ea5e9;
+}
+
+
+/* NAV LINKS */
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+
+.nav-links a{
+    text-decoration: none;
+    color: white;
+
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+
+.nav-links a:hover{
+    color: #38bdf8;
+}
+
+
+/* CONTAINER */
+
+.container{
+    width: 100%;
+    min-height: 80vh;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+    width: 100%;
+    height: 90vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.5),
+    rgba(0,0,0,0.7)),
+
+    url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1974&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* HERO TEXT */
+
+.hero h1{
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+
+.hero p{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* BUTTON */
+
+.btn{
+    padding: 14px 35px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #38bdf8;
+    color: white;
+
+    font-size: 17px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.btn:hover{
+    background: #0ea5e9;
+    transform: translateY(-3px);
+}
+
+
+/* CATEGORY SECTION */
+
+.categories{
+    padding: 70px 8%;
+}
+
+
+.categories h2{
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+
+/* CATEGORY GRID */
+
+.category-grid{
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(180px,1fr));
+
+    gap: 25px;
+}
+
+
+/* CATEGORY CARD */
+
+.category-card{
+    background: #1e293b;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+}
+
+
+.category-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+
+/* CATEGORY IMAGE */
+
+.category-card img{
+    width: 100%;
+    height: 180px;
+
+    object-fit: cover;
+}
+
+
+/* CATEGORY TITLE */
+
+.category-card h3{
+    padding: 15px;
+    font-size: 20px;
+}
+
+
+/* PRODUCTS SECTION */
+
+.products{
+    padding: 70px 8%;
+}
+
+
+.products h2{
+    margin-bottom: 40px;
+    font-size: 35px;
+}
+
+
+/* PRODUCT GRID */
+
+.product-grid{
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 30px;
+}
+
+
+/* PRODUCT CARD */
+
+.product-card{
+    background: #1e293b;
+
+    border-radius: 15px;
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+
+.product-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-card img{
+    width: 100%;
+    height: 250px;
+
+    object-fit: contain;
+
+    background: white;
+
+    padding: 10px;
+}
+
+
+/* PRODUCT INFO */
+
+.product-info{
+    padding: 20px;
+}
+
+
+.product-info h3{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+
+.product-info p{
+    color: #cbd5e1;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+
+/* PRICE */
+
+.price{
+    color: #38bdf8;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* FOOTER */
+
+.footer{
+    background: #111827;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* LOGIN PAGE */
+
+.login-container{
+    width: 100%;
+    min-height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-form{
+    width: 400px;
+
+    background: #1e293b;
+
+    padding: 40px;
+
+    border-radius: 15px;
+}
+
+
+.login-form h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.login-form input{
+    width: 100%;
+    padding: 14px;
+
+    margin-bottom: 20px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 900px){
+
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .search-box{
+        width: 100%;
+    }
+
+    .hero h1{
+        font-size: 42px;
+    }
+
+    .hero p{
+        font-size: 16px;
+    }
+
+}
+
+/* PRODUCT DETAILS */
+
+.product-details{
+    padding: 70px 8%;
+}
+
+
+.details-container{
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    background: #1e293b;
+
+    padding: 40px;
+
+    border-radius: 20px;
+}
+
+
+/* IMAGE */
+
+.details-image{
+    flex: 1;
+}
+
+
+.details-image img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+/* INFO */
+
+.details-info{
+    flex: 1;
+}
+
+
+.details-info h1{
+    font-size: 45px;
+}
+
+
+.details-info p{
+    color: #cbd5e1;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .details-container{
+        flex-direction: column;
+    }
+
+}
+
+.login-form select{
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 20px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+}
+
+.flash-message{
+
+    background: crimson;
+
+    color: white;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}

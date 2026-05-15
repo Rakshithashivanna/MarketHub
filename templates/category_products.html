@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="products">
+
+    <h2>
+        {{ category_name }}
+    </h2>
+
+    <br><br>
+
+    <!-- SUBCATEGORY MENU -->
+
+    <div style="display:flex;
+    gap:20px;
+    flex-wrap:wrap;">
+
+        {% for subcategory in subcategories %}
+
+        <a href="/subcategory/{{ category_name }}/{{ gender }}/{{ subcategory }}">
+        class="btn">
+
+            {{ subcategory }}
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

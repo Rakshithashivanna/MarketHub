@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="product-details">
+
+    <div class="details-container">
+
+
+        <!-- IMAGE -->
+
+        <div class="details-image">
+
+            <img src="{{ product.image }}"
+            alt="">
+
+        </div>
+
+
+
+        <!-- INFO -->
+
+        <div class="details-info">
+
+            <h1>
+                {{ product.name }}
+            </h1>
+
+            <br>
+
+            <h2 class="price">
+                ₹{{ product.price }}
+            </h2>
+
+            <br>
+
+            <p>
+                {{ product.description }}
+            </p>
+
+            <br><br>
+
+            <h3>
+                Category :
+                {{ product.category }}
+            </h3>
+
+            <br><br>
+
+            <button class="btn">
+                Add To Cart
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

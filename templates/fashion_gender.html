@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="categories">
+
+    <h2>Fashion Categories</h2>
+
+    <div class="category-grid">
+
+        {% for gender in genders %}
+
+        <a href="/category/Fashion/{{ gender }}"
+        style="text-decoration:none; color:white;">
+
+            <div class="category-card">
+
+                <h3>{{ gender }}</h3>
+
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

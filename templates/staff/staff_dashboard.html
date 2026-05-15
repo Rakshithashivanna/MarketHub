@@ -1,0 +1,49 @@
+{% extends 'staff/staff_base.html' %}
+
+{% block content %}
+
+<h1>Staff Dashboard</h1>
+
+<div class="dashboard-cards">
+
+    <div class="card">
+
+        <h2>Add Products</h2>
+
+        <br>
+
+        <a href="/add-product">
+
+            <button class="btn">
+
+                Add Product
+
+            </button>
+
+        </a>
+
+    </div>
+
+
+
+    <div class="card">
+
+        <h2>Manage Orders</h2>
+
+        <br>
+
+        <a href="/staff-orders">
+
+            <button class="btn">
+
+                View Orders
+
+            </button>
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

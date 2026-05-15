@@ -1,0 +1,62 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block content %}
+
+<h1>Edit Product</h1>
+
+<div class="form-container">
+
+    <form method="POST">
+
+        <input type="text"
+        name="name"
+        value="{{ product.name }}"
+        placeholder="Product Name"
+        required>
+
+        <input type="number"
+        name="price"
+        value="{{ product.price }}"
+        placeholder="Price"
+        required>
+
+        <input type="text"
+        name="image"
+        value="{{ product.image }}"
+        placeholder="Image URL"
+        required>
+
+        <input type="text"
+        name="category"
+        value="{{ product.category }}"
+        placeholder="Category"
+        required>
+
+        <input type="text"
+        name="gender"
+        value="{{ product.gender }}"
+        placeholder="gender"
+        required>
+
+        <input type="text"
+        name="subcategory"
+        value="{{ product.subcategory }}"
+        placeholder="Subcategory"
+        required>
+
+        <textarea
+        name="description"
+        placeholder="Description"
+        required>{{ product.description }}</textarea>
+
+        <button class="btn">
+
+            Update Product
+
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}
